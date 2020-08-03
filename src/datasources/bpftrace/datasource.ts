@@ -100,7 +100,8 @@ export class DataSource extends DataSourceApi<BPFtraceQuery, BPFtraceOptions> {
             throw new Error(`BPFtrace error:\n\n${script.state.error}`);
         }
         target.custom = { script };
-        return this.state.scriptManager.getMetrics(target.custom.script, target.query.format);
+        const metrics = this.state.scriptManager.getMetrics(target.custom.script, target.query.format);
+        return { metrics };
     }
 
     deregisterTarget(target: Target<BPFtraceTargetData>) {
@@ -137,6 +138,10 @@ export class DataSource extends DataSourceApi<BPFtraceQuery, BPFtraceOptions> {
     }
 
     async testDatasource() {
-        return await testDatasource(this.state.pmApi, this.instanceSettings.url!, this.instanceSettings.jsonData.hostspec!);
+        return await testDatasource(
+            this.state.pmApi,
+            this.instanceSettings.url!,
+            this.instanceSettings.jsonData.hostspec!
+        );
     }
 }
