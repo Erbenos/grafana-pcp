@@ -22,6 +22,7 @@ DASHBOARDS := $(addprefix $(DASHBOARD_DIR)/,\
 	storage-overview.json \
 	memory-overview.json \
 	memory-swap-overview.json \
+	network-overview.json \
 	network-rx-overview.json \
 	network-tx-overview.json)
 
