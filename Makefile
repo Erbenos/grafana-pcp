@@ -15,16 +15,16 @@ DASHBOARDS := $(addprefix $(DASHBOARD_DIR)/,\
 	pcp-bpftrace-flame-graphs.json \
 	fulltext-graph-preview.json \
 	fulltext-table-preview.json \
-	overview.json \
-	cpu-overview.json \
-	cpu-sys-overview.json \
-	cpu-user-overview.json \
-	storage-overview.json \
-	memory-overview.json \
-	memory-swap-overview.json \
-	network-overview.json \
-	network-rx-overview.json \
-	network-tx-overview.json)
+	overview/root.json \
+	overview/cpu.json \
+	overview/cpu-sys.json \
+	overview/cpu-user.json \
+	overview/storage.json \
+	overview/memory.json \
+	overview/memory-swap.json \
+	overview/network.json \
+	overview/network-rx.json \
+	overview/network-tx.json)
 
 default: build
 
